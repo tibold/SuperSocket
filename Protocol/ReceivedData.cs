@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SuperSocket.Protocol
 {
-    public struct ReceivedData
+    public class ReceivedData
     {
         public ArraySegment<byte> Current { get; set; }
 
