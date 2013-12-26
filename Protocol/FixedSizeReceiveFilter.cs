@@ -26,10 +26,12 @@ namespace SuperSocket.Protocol
             if (total < m_Size)
                 return default(TPackageInfo);
 
+            //There is more data after parse one request
             if (total > m_Size)
+            {
                 rest = total - m_Size;
-
-            data.SetLastLength(m_Size - (data.Current.Count - rest));
+                data.SetLastLength(data.Current.Count - rest);
+            }
 
             if (!CanResolvePackage(data.PackageData))
                 return default(TPackageInfo);
