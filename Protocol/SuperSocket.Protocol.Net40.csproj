@@ -37,6 +37,8 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BeginEndMarkReceiveFilter.cs" />
+    <Compile Include="CountSpliterReceiveFilter.cs" />
     <Compile Include="FilterState.cs" />
     <Compile Include="FixedHeaderReceiveFilter.cs" />
     <Compile Include="FixedSizeReceiveFilter.cs" />
