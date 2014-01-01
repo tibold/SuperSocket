@@ -39,7 +39,7 @@ namespace SuperSocket.WebSocket.SubProtocol
         /// <param name="commandInfo">The command info.</param>
         protected override void ExecuteJsonCommand(TWebSocketSession session, TJsonCommandInfo commandInfo)
         {
-            m_AsyncJsonCommandAction.BeginInvoke(session, session.CurrentToken, commandInfo, null, session);
+            m_AsyncJsonCommandAction.BeginInvoke(session, session.CurrentToken, commandInfo, OnAsyncJsonCommandExecuted, session);
         }
 
         /// <summary>

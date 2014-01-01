@@ -17,7 +17,7 @@ namespace SuperSocket.WebSocket.Protocol
 
         public int LeftBufferSize
         {
-            get { return m_Frame.InnerData.Count; }
+            get { return m_Frame != null ? m_Frame.InnerData.Count : 0; }
         }
 
         public IReceiveFilter<IWebSocketFragment> NextReceiveFilter
@@ -27,7 +27,7 @@ namespace SuperSocket.WebSocket.Protocol
 
         public WebSocketDataFrameReceiveFilter()
         {
-            m_Frame = new WebSocketDataFrame(new ArraySegmentList());
+            //m_Frame = new WebSocketDataFrame(new ArraySegmentList());
             m_PartReader = DataFramePartReader.NewReader;
         }
 
